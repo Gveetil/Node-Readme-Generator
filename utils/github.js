@@ -1,7 +1,11 @@
+require('dotenv').config();
 const axios = require("axios");
 
-/** Token used to access the GitHub API */
-const githubToken = "ad9876e2d73619a0e98cc2d73aa701f63188151b";
+/** 
+ * Token used to access the GitHub API - If the access token has not been set in the environment variables,
+ * use public API mode - this provides access to most data except user email address.
+*/
+const githubToken = (process.env.GITHUB_TOKEN == undefined) ? '' : `?access_token=${process.env.GITHUB_TOKEN}`;
 
 /** This class represents a Git User */
 class GitUser {
@@ -44,7 +48,7 @@ class GitUserRepo {
  */
 async function getUser(gitUsername) {
   try {
-    const userUrl = `https://api.github.com/users/${gitUsername}?access_token=${githubToken}`;
+    const userUrl = `https://api.github.com/users/${gitUsername}${githubToken}`;
     const response = await axios.get(userUrl);
     // If user data has not been retrieved successfully, return null
     if (response == undefined || !("data" in response)
@@ -67,7 +71,7 @@ async function getUser(gitUsername) {
  */
 async function getRepositories(reposUrl) {
   try {
-    const queryUrl = `${reposUrl}?access_token=${githubToken}`;
+    const queryUrl = `${reposUrl}${githubToken}`;
     const response = await axios.get(queryUrl);
 
     // If repository data has not been retrieved successfully, return
