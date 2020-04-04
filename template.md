@@ -1,5 +1,9 @@
 # ${(project.title.trim() == "") ? 'Project title ...' : project.title.trim()}
 
+<!-- Badges section -->
+${(project.badges.length <= 0)? '' : eval('`' + project.badges.join(" ") + '`')}
+<!-- Badges section-->
+
 ${(project.description.trim() == "") ? 'Project description goes here ...' : project.description.trim()}
 
 <!-- project homepage section - added only if available -->
@@ -58,8 +62,5 @@ Email: ${(user.email == '')? ' Not Available ' : `[${user.email}](mailto:${user.
 ![User Image](${(user.imageUrl == '')? '' : user.imageUrl + '&s=200'})
 <!-- user image -->
 
-<!-- Badges section - Dynamically added only if the badges have been specified -->
-${(project.badges.length <= 0)? '' : eval('`' + project.badges.join(" ") + '`')}
-<!-- Badges section-->
 
 

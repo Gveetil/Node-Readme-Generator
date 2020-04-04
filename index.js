@@ -39,7 +39,7 @@ async function init() {
 function formatUserResponse(data) {
     if (data != null && "repository" in data && data.repository != null) {
         if (typeof data.repository == "string")
-            data.repository = data.repository.trim();
+            data.repository = data.repository.trim().replace(/ /g, "");
         else {
             // if repository is selected by user - extract name and homepage
             let repoName = data.repository.name;

@@ -2,7 +2,7 @@
  *  it is used to recieve user input for generating the readme file */
 module.exports = [{
     name: "repository",
-    message: "Select Repository:",
+    message: "Project Repository:",
     type: "list",
     choices: []
 }, {
@@ -34,32 +34,26 @@ module.exports = [{
     message: "Badge type",
     type: "checkbox",
     choices: [{
-        name: "GitHub Followers",
-        value: "![GitHub followers](https://img.shields.io/github/followers/${user.name}?style=social)"
-    }, {
-        name: "Maintained - this year",
-        value: "![Maintenance](https://img.shields.io/maintenance/yes/${(new Date()).getFullYear()})"
-    }, {
-        name: "Date updated - now",
-        value: "![Relative date](https://img.shields.io/date/${Math.floor(Date.now()/1000)})"
-    }, {
-        name: "GitHub - last commit",
-        value: "![GitHub last commit](https://img.shields.io/github/last-commit/${user.name}/${project.repository})"
-    }, {
         name: "GitHub - issues",
         value: "![GitHub issues](https://img.shields.io/github/issues/${user.name}/${project.repository})"
     }, {
         name: "GitHub - repo size",
         value: "![GitHub repo size](https://img.shields.io/github/repo-size/${user.name}/${project.repository})"
     }, {
-        name: "GitHub - All Releases",
+        name: "GitHub Downloads - All Releases",
         value: "![GitHub All Releases](https://img.shields.io/github/downloads/${user.name}/${project.repository}/total)"
+    }, {
+        name: "GitHub - last commit",
+        value: "![GitHub last commit](https://img.shields.io/github/last-commit/${user.name}/${project.repository})"
     }, {
         name: "Cdnjs - jQuery",
         value: "![Cdnjs](https://img.shields.io/cdnjs/v/jquery)"
     }, {
         name: "Npm - inquirer",
         value: "![npm](https://img.shields.io/npm/v/inquirer)"
+    }, {
+        name: `Maintained - ${(new Date()).getFullYear()}`,
+        value: "![Maintenance](https://img.shields.io/maintenance/yes/${(new Date()).getFullYear()})"
     }]
 }, {
     name: "license",
@@ -72,21 +66,29 @@ module.exports = [{
         name: "Apache 2.0",
         value: {
             name: "Apache",
-            description: "Unless otherwise noted all files are covered under Apache License Version 2.0. Please read the LICENSE file for details",
+            description: `Copyright ${(new Date()).getFullYear()} \n\nLicensed under the Apache License, Version 2.0; you may not use this software except in compliance with the License. \n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. Please refer to the License file for specific permissions and limitations of the License.
+            `,
             badge: "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
         }
     }, {
         name: "GNU 3.0",
         value: {
             name: "GNU",
-            description: "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License (LGPL) as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. for details see the LICENCE text file.",
+            description: `Copyright ${(new Date()).getFullYear()} \n\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nFor more details please refer to the LICENCE text file.`,
             badge: "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
+        }
+    }, {
+        name: "ISC",
+        value: {
+            name: "ISC",
+            description: `Copyright ${(new Date()).getFullYear()} \n\nPermission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.`,
+            badge: "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)"
         }
     }, {
         name: "MIT",
         value: {
             name: "MIT",
-            description: "This project is licensed under the MIT License - see the LICENSE.md file for details",
+            description: `Copyright ${(new Date()).getFullYear()} \n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`,
             badge: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
         }
     }]
