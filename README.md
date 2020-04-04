@@ -11,11 +11,11 @@ The Readme Generator is a command-line Node.js application that dynamically gene
 * Questions
 * Auto generated badges
 * License Disclaimer
-* User details - email and picture
+* User details - email and picture<br><br>
 
 ## Application Demo
 
-![Readme Generator Preview](images/node-readme-generator.gif)
+![Readme Generator Preview](images/node-readme-generator.gif)<br><br><br>
 
 ## Table of Contents 
 
@@ -69,34 +69,35 @@ To run the program, browse to the local folder where you cloned the Repo and exe
 ```shell
 $ npm start 
 ```
-The app should now start executing.
+The app should now start executing.<br><br>
 
 ## Usage Guidelines
 - When the application is executed, first the user is prompted to enter their GitHub username.
-- The application then checks if it is a valid github username. If the name is not valid, the application exits with the following message:
+- The application then checks if it is a valid github username. If the name is not valid, the application exits with the following message:<br><br>
 
-![Invalid User Error](images/readme_invalid_user_error.png "Invalid User Error")
+ ![Invalid User Error](images/readme_invalid_user_error.png "Invalid User Error")<br><br>
 
-- If the name is valid, the application then fetches a list of the user's GitHub repositories.
+- If the name is valid, the application then fetches a list of the user's GitHub repositories.<br><br>
 
-![Select Repository](images/readme_select_repository.png "Select Repository")
+ ![Select Repository](images/readme_select_repository.png "Select Repository")<br><br>
 
-- If no repositories are found for the user, the application also provides an option to enter a new repository name: 
+- If no repositories are found for the user, the application also provides an option to enter a new repository name: <br><br>
 
-![Enter Repository Name](images/readme_enter_repository_name.png "Enter Repository Name")
+ ![Enter Repository Name](images/readme_enter_repository_name.png "Enter Repository Name")<br>
 
-(Note: Readme badges generated for this repo will not work until this repository is created in git hub.)
-- Once the user selects the repository the application fetches the project title and description from GitHub. The user has the option to edit these.
+ `Note: Readme Badges for this repo will not function until this repository is created in GitHub.`<br><br>
+
+- Once the user selects the repository, the application fetches the project title and description from GitHub. The user has the option to edit these.
 - Next the user is prompted to enter installation instructions, usage guidelines, testing guidelines and questions. These can be entered as text or copy pasted. To seperate multiple lines, use the `<br>` tag.
-- The user then has an option of selecting the badges to display in the Readme file:
+- The user then has an option of selecting the badges to display in the Readme file:<br><br>
 
-![Badge Selection](images/readme_badge_selection.png "Badge Selection")
+ ![Badge Selection](images/readme_badge_selection.png "Badge Selection")<br><br>
 
-- Lastly, the user can select the Project License type to be used in the Readme file:
+- Lastly, the user can select the Project License type to be used in the Readme file:<br><br>
+ 
+ ![License Types](images/readme_license_types.png "License Types")<br><br>
 
-![License Types](images/readme_license_types.png "License Types")
-
-- The application then generates the readme file in a local folder named `output`. All readme files are generated with a timestamp to ensure they do not overwrite existing files.
+- The application then generates the readme file in a local folder named `output`. All readme files are generated with a timestamp to ensure they do not overwrite existing files.<br><br>
 
 ## Open Issues
 The application currently uses the GitHub `access_token` as part of a query parameter to access GitHub APIs. This needs to be updated to use the Authorization HTTP header instead, as using the `access_token` query parameter is deprecated and may cease to work at a later point. 
